@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">NotDoc-K</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_refresh">Actualiser</string>
+    <string name="data_refreshed">Données mises à jour</string>
+    <string name="list_dossiers_img">Les dossiers</string>
+    <string name="nothing_to_display">Aucun élément à afficher</string>
+    <string name="list_clients">Liste des clients</string>
+    <string name="list_partenaires">Liste des partenaires</string>
+
+    <!-- Dialog Interface -->
+    <string name="logout_confirm_dialog_message">Etes-vous sûr de vouloir vous déconnecter ?</string>
+    <string name="valid_confirm_dialog_message">Etes-vous sûr de vouloir valider ce dossier ?</string>
+    <string name="confirm_dialog_title">Confirmation</string>
+    <string name="confirm_dialog_btn_yes">OUI</string>
+    <string name="confirm_dialog_btn_no">NON</string>
+
+    <!-- SharedPreferences Filenames -->
+    <string name="login_status_file">login_status_file</string>
+    <string name="connected_user_infos_file">connected_user_infos_file</string>
+
+    <!-- Login Page -->
+    <string name="logged_in">logged_in</string>
+    <string name="logged_out">logged_out</string>
+    <string name="text_user_id">Identifiant</string>
+    <string name="text_user_password">Mot de passe</string>
+    <string name="user_id_error">Saisir l\'identifiant</string>
+    <string name="user_password_error">Saisir le mot de passe</string>
+    <string name="login">Connexion</string>
+    <string name="logo_description">NotDoc-K logo</string>
+    <string name="login_loading">Connexion…</string>
+    <string name="login_failed">Identifiant et/ou mot de passe incorrects</string>
+    <string name="network_disconnected">Une erreur est survenue lors du traitement. Vérifiez votre connexion réseau.</string>
+
+    <!-- Navigation Menu -->
+    <string name="nav_menu_dashboard">Tableau de bord</string>
+    <string name="nav_menu_dossier">Liste des dossiers</string>
+    <string name="nav_menu_account">Compte</string>
+    <string name="nav_menu_logout">Déconnexion</string>
+
+    <!-- Dashboard -->
+    <string name="dossiers_en_cours">Dossiers en cours</string>
+    <string name="dossiers_non_soldes">Dossiers non soldés</string>
+    <string name="partenaires">Partenaires</string>
+    <string name="clients">Clients</string>
+
+    <!-- Details Dossier Page -->
+    <string name="details_dossier">Détails dossier</string>
+    <string name="dossier_lie">Dossier lié</string>
+    <string name="dossier_valide">Dossier validé avec succès.</string>
+    <string name="valider_dossier">Valider</string>
+    <string name="reglements_financiers">Règlements financiers</string>
+    <string name="pieces_jointes">Pièces jointes</string>
+    <string name="commentaires">Commentaires</string>
+    <string name="agendas">Agendas</string>
+    <string name="etapes_dossier">Etapes</string>
+    <string name="courriers">Courriers</string>
+
+    <!-- Infos Dossier Page -->
+    <string name="infos_dossier">Infos dossier</string>
+    <string name="code_dossier">Code</string>
+    <string name="nom_dossier">Nom</string>
+    <string name="desc_dossier">Description</string>
+    <string name="date_ouv_dossier">Date d\'ouverture</string>
+    <string name="date_prob_cloture_dossier">Date probable de clôture</string>
+    <string name="cout_dossier">Coût</string>
+    <string name="domaine_dossier">Domaine</string>
+    <string name="sous_domaine_dossier">Sous-domaine</string>
+
+    <!-- Compte Page -->
+    <string name="lastname">Nom</string>
+    <string name="firstname">Prénom(s)</string>
+    <string name="username">Identifiant</string>
+    <string name="accounttype">Type de compte</string>
+
+    <!-- Détails Pages -->
+    <string name="num_piece">N° Pièce</string>
+    <string name="date_deliv_piece_identite">Date de délivrance</string>
+    <string name="date_exp_piece_identite">Date d\'expiration</string>
+    <string name="lieu_deliv_piece_identite">Lieu de délivrance</string>
+    <string name="telephone">Téléphone</string>
+    <string name="email">E-mail</string>
+    <string name="adresse">Adresse</string>
+    <string name="type">Type</string>
+    <string name="fonction">Fonction</string>
+    <string name="montant_reg_fin">Montant</string>
+    <string name="date_reg_fin">Date reglèment</string>
+    <string name="total_paye">Total payé</string>
+    <string name="reste_a_payer">Reste à payer</string>
+    <string name="objet_courrier">Objet</string>
+    <string name="date">Date</string>
+    <string name="date_debut">Date début</string>
+    <string name="date_fin">Date fin</string>
+    <string name="observation_etape">Observation</string>
+
+</resources>

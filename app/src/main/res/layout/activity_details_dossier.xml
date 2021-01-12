@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailsDossierActivity">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
+
+         <!-- Valider Dossier -->
+        <Button
+            android:id="@+id/btn_valid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/valid_btn_top_vertical_margin"
+            android:layout_marginBottom="@dimen/valid_btn_bottom_vertical_margin"
+            android:layout_marginStart="@dimen/valid_btn_horizontal_margin"
+            android:layout_marginEnd="@dimen/valid_btn_horizontal_margin"
+            android:padding="15dp"
+            android:visibility="gone"
+            android:theme="@style/AccentButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="17sp"
+            android:textAllCaps="true"
+            android:textColor="#FFF"
+            android:text="@string/valider_dossier" />
+
+        <!-- Infos Dossier -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/info_dossier_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="#619BB1"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <TextView
+                    android:id="@+id/nom_dossier_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#FFF" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical|end"
+                    android:src="@drawable/ic_hole_folder_white"
+                    android:contentDescription="@string/infos_dossier" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <!-- Dossier lié -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/dossier_lie_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:cardBackgroundColor="#619BB1"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <TextView
+                    android:id="@+id/nom_dossier_lie"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#FFF" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical|end"
+                    android:src="@drawable/ic_link_white"
+                    android:contentDescription="@string/dossier_lie" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/detail_swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="vertical">
+
+                <!-- Règlement Finance -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/reg_fin_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFF"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_visa_black"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="@string/reglements_financiers" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/reglements_financiers"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:textColor="#333" />
+
+                            <TextView
+                                android:id="@+id/nb_reg_fin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="23sp"
+                                android:textColor="#333" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!-- Pièces Jointes -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/pieces_jointes_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFF"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_attach_black"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="@string/pieces_jointes" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pieces_jointes"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:textColor="#333" />
+
+                            <TextView
+                                android:id="@+id/nb_pieces_jointes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="23sp"
+                                android:textColor="#333" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!-- Courriers -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/courriers_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFF"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_mail_black"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="@string/courriers" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/courriers"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:textColor="#333" />
+
+                            <TextView
+                                android:id="@+id/nb_courriers"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="23sp"
+                                android:textColor="#333" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!-- Agendas -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/agendas_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFF"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_calendar_black"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="@string/agendas" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/agendas"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:textColor="#333" />
+
+                            <TextView
+                                android:id="@+id/nb_agendas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="23sp"
+                                android:textColor="#333" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!-- Etapes dossier -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/etapes_dossier_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFF"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_purchase_order_black"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="@string/etapes_dossier" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/etapes_dossier"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:textColor="#333" />
+
+                            <TextView
+                                android:id="@+id/nb_etapes_dossier"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="23sp"
+                                android:textColor="#333" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!-- Partenaires -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/partenaires_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFF"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_partners_black"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="@string/partenaires" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_weight="3"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/partenaires"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:textColor="#333" />
+
+                            <TextView
+                                android:id="@+id/nb_partenaires_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="23sp"
+                                android:textColor="#333" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!-- Clients -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/clients_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFF"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_clients_black"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="@string/clients" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/clients"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:textColor="#333" />
+
+                            <TextView
+                                android:id="@+id/nb_clients_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="23sp"
+                                android:textColor="#333" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!-- Commentaires -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/comments_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFF"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_comment_black"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="@string/commentaires" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_weight="3"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/commentaires"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:textColor="#333" />
+
+                            <TextView
+                                android:id="@+id/nb_comments"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="23sp"
+                                android:textColor="#333" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

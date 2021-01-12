@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="valid_btn_horizontal_margin">3dp</dimen>
+    <dimen name="valid_btn_bottom_vertical_margin">-1dp</dimen>
+    <dimen name="valid_btn_top_vertical_margin">6dp</dimen>
+</resources>

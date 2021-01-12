@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <!--  App Logo -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:src="@drawable/logo"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/logo_description" />
+
+        <!-- User Id Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+            <EditText android:id="@+id/input_user_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:drawableEnd="@drawable/ic_person_black"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:hint="@string/text_user_id"
+                tools:ignore="Autofill" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  User Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+            <EditText android:id="@+id/input_user_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:drawableEnd="@drawable/ic_lock_black"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:hint="@string/text_user_password"
+                tools:ignore="Autofill" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Login Button -->
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:padding="15dp"
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="17sp"
+            android:textColor="#FFF"
+            android:theme="@style/AccentButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="@string/login" />
+
+    </LinearLayout>
+</ScrollView>
